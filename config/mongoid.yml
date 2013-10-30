@@ -1,0 +1,29 @@
+development:
+  sessions:
+    default:
+      database: rails3_mongoid_haml_sass_development
+      hosts:
+        - localhost:27017
+  options:
+    raise_not_found_error: false
+
+test:
+  sessions:
+    default:
+      database: rails3_mongoid_haml_sass_development_test
+      hosts:
+        - localhost:27017
+  options:
+    raise_not_found_error: false
+
+production:
+  sessions:
+    default:
+      hosts: 
+        - <%= ENV['MONGOHQ_HOST'] %>
+      database: <%= ENV['MONGOHQ_DB'] %>
+      username: <%= ENV['MONGOHQ_USERNAME'] %>
+      password: <%= ENV['MONGOHQ_PASSWORD'] %>
+  options:
+    skip_version_check: true
+    raise_not_found_error: false
